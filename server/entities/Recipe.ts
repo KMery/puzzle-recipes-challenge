@@ -35,7 +35,6 @@ export class Recipe extends BaseEntity {
         length: 250
     })
     ingredients!: string;
-    // ingredients!: Array<string>;
 
     @Field(() => Date)
     @Column()
@@ -47,27 +46,21 @@ export class Recipe extends BaseEntity {
     @UpdateDateColumn()
     updatedAt!: Date;
 
-    // @Field(() => User)
     @Field(() => String)
     @Column()
     userId: string;
 
     @ManyToOne(type => User, user => user.recipes)
-    // @JoinColumn()
-    // user!: User;
     @JoinColumn({
         name: "userId"
     })
     user!: string;
     
-
     @Field(() => String)
     @Column()
     categoryId: string;
     
     @ManyToOne(type => Category, category => category.recipes)
-    // @JoinColumn()
-    // category!: Category;
     @JoinColumn({
         name: "categoryId"
     })

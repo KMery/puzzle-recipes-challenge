@@ -15,7 +15,6 @@ export class User extends BaseEntity {
     @Column({
         type: 'varchar',
         nullable: false
-        // length: 50
     })
     @IsNotEmpty()
     @Length(4, 20)
@@ -31,11 +30,9 @@ export class User extends BaseEntity {
     @IsEmail()
     email!: string;
 
-    // @Field(() => String)
     @Column({
         type: 'varchar',
-        nullable: false,
-        // length: 20
+        nullable: false
     })
     @IsNotEmpty()
     @Length(8, 80)

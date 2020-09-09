@@ -5,7 +5,6 @@ import "reflect-metadata"
 
 import SERVER_PORT from './config';
 import { startConn } from './database/conn';
-// import { buildSchemaFromTypeDefinitions } from "apollo-server";
 
 const app = express();
 

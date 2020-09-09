@@ -2,9 +2,9 @@ import { createConnection } from "typeorm";
 import { ApolloServer } from "apollo-server";
 import { buildSchema } from "type-graphql";
 
-import { UserResolver } from '../../resolvers/UserResolver';
-import { CategoryResolver } from '../../resolvers/CategoryResolver';
-import { RecipeResolver } from '../../resolvers/RecipeResolver';
+import { UserResolver } from '../resolvers/UserResolver';
+import { CategoryResolver } from '../resolvers/CategoryResolver';
+import { RecipeResolver } from '../resolvers/RecipeResolver';
 
 export async function startConn(port: any)  {
     try {
@@ -20,10 +20,6 @@ export async function startConn(port: any)  {
                 RecipeResolver
             ],
             validate: false
-            // context: ({ req }) => {
-                // return {
-                //   req: req
-                // }
         });
         const server = new ApolloServer({ 
             schema,

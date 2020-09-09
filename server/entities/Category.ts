@@ -17,10 +17,7 @@ export class Category extends BaseEntity {
         length: 20
     })
     name!: string;
-
-    // @Column(() => String)
-    // name!: string;
-
+    
     @Field(() => Date)
     @Column(() => Date)
     @CreateDateColumn()

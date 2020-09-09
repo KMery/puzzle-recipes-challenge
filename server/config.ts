@@ -1,6 +1,3 @@
-// import * as dotenv from "dotenv";
-// dotenv.config();
-
 const dotenv = require('dotenv'); 
 dotenv.config({path:__dirname + '/.env'})    
 

@@ -11,9 +11,7 @@ export class CreateRecipeInput {
 
   @Field(type => String)
     ingredients!: string;
-    // ingredients!: string[];
-    
-    // {defaultValue: "0"}  
+
   @Field({nullable: true})
     categoryId!: string;
 }

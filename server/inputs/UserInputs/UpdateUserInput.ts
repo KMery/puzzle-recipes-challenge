@@ -1,5 +1,5 @@
 import { InputType, Field } from "type-graphql";
-import { Length, IsNotEmpty, IsEmail } from "class-validator";
+import { Length, IsEmail } from "class-validator";
 
 @InputType()
 export class UpdateUserInput {
@@ -7,7 +7,6 @@ export class UpdateUserInput {
   name!: string;
 
   @Field({ nullable: false })
-  // @IsNotEmpty({ message: "email can't be empty" })
   @Length(20, 80)
   @IsEmail()
   email!: string;

@@ -1,25 +1,29 @@
 import { Resolver, Query, Mutation, Arg, UseMiddleware, Ctx } from "type-graphql";
 
-import { Category } from '../server/entities/Category';
-import { CreateCategoryInput } from "../server/inputs/CategoryInputs/CreateCategoryInput";
-import { UpdateCategoryInput } from "../server/inputs/CategoryInputs/UpdateCategoryInput";
-import { checkJWT } from "../server/middleware/checkJWT";
-import { MyContext } from "../server/middleware/myContext";
+import { Category } from '../entities/Category';
+import { CreateCategoryInput } from "../inputs/CategoryInputs/CreateCategoryInput";
+import { UpdateCategoryInput } from "../inputs/CategoryInputs/UpdateCategoryInput";
+import { checkJWT } from "../middleware/checkJWT";
+import { MyContext } from "../middleware/myContext";
 
+//You need to singUp an user and login to use this resolver, more information in UserResolver
 @Resolver(of => Category)
 export class CategoryResolver {
+  //This Query return all the categories
   @Query(returns => [Category!])
   @UseMiddleware(checkJWT)
   async getCategories(@Ctx() { payload }: MyContext) {  
     return await Category.find();
   }
 
+  //This Query return one category for the given id
   @Query(() => Category!)
   @UseMiddleware(checkJWT)
   async getOneCategory(@Ctx() { payload }: MyContext, @Arg("id") id: string) {  
     return await Category.findOne({ where: { id } });
   }
 
+  //This mutation let you add a new category
   @Mutation(() => Category!)
   @UseMiddleware(checkJWT)
   async createCategory(@Ctx() { payload }: MyContext, @Arg("input") input: CreateCategoryInput) {
@@ -30,6 +34,7 @@ export class CategoryResolver {
     return category;
   }
 
+  //This mutation let you update an existent category
   @Mutation(() => Category)
   @UseMiddleware(checkJWT)
   async updateCategory(@Ctx() { payload }: MyContext, @Arg("id") id: string, @Arg("input") input: UpdateCategoryInput) {
@@ -40,6 +45,7 @@ export class CategoryResolver {
     return category;
    }
 
+  //You can delete a Category with this mutation, return true if success
   @Mutation(() => Boolean)
   @UseMiddleware(checkJWT)
   async deleteCategory(@Ctx() { payload }: MyContext, @Arg("id") id: string) {
