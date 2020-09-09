@@ -17,6 +17,7 @@ This project was made using the following libraries
 Once you have clone this project go to that folder in command line with "cd folder"
 Then you can test it with:
 
+####    npm install
 ####    npm run start
 
 If you want to get the .js build just run:
@@ -85,7 +86,7 @@ You can use the following
         deleteCategory
         deleteRecipe    
 
-For more information about this you can check the DOCS button in the playground (in http://localhost:4000/)
+For more information about this you can check the DOCS button in the playground (in http://localhost:4000/ if the project is running)
 
 ## Author
 Mayra Leiva 09/2020
