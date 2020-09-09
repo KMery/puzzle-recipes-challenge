@@ -16,7 +16,8 @@ This project was made using the following libraries
 
 Once you have clone this project go to that folder in command line with "cd folder"
 Then you can test it with:
-    npm run start
+
+####    npm run start
 
 You must have the mysql database ON and you can configure it in "ormconfig.json" or just set as in the file.
 The sentence for create the database is: CREATE DATABASE [IF NOT EXISTS] puzzle
@@ -80,6 +81,7 @@ You can use the following
         deleteCategory
         deleteRecipe    
 
+For more information about this you can check the DOCS button in the playground (in http://localhost:4000/)
 
 ## Author
 Mayra Leiva 09/2020
