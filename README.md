@@ -19,6 +19,10 @@ Then you can test it with:
 
 ####    npm run start
 
+If you want to get the .js build just run:
+
+####    npm run build
+
 You must have the mysql database ON and you can configure it in "ormconfig.json" or just set as in the file.
 The sentence for create the database is: CREATE DATABASE [IF NOT EXISTS] puzzle
 
