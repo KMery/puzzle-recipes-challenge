@@ -22,6 +22,7 @@ You must have the mysql database ON and you can configure it in "ormconfig.json"
 The sentence for create the database is: CREATE DATABASE [IF NOT EXISTS] puzzle
 
 Once you have all this steps running you can go to http://localhost:4000/ and create an new user with the createUser mutation:
+
     mutation newUser {
         createUser(input: {
             name: "your_name",
@@ -48,6 +49,7 @@ and the just login to use the other queries and mutations
     }
 
 Copy the accessToken and paste it in the HTTP header of the playground, like this:
+
 {
     "Authorization": "Bearer 'your_accessToken_here'"
 }
