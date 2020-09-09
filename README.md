@@ -56,6 +56,7 @@ Now you can use the other mutations and queries
 
 ## Mutations and Queries
 You can use the following
+
     Queries:
         getUser
         getOneCategory
